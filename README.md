@@ -23,7 +23,8 @@ He will forever be in our hearts.
 
 ## Moving forward:
 
-- Add styles w/ a CSS lib
+- Release in chrome store
+- Logo
 - Impl a dialog
 - Blogging
 
