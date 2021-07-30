@@ -1,4 +1,4 @@
-![](/assets/mundi_header.png)
+![](/screenshots/home_1000x600.png)
 
 Mundi Cookie Cleaner
 ============
