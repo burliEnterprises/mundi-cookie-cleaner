@@ -10,5 +10,5 @@
     "background": {
       "scripts": ["background.js"]
     },
-    "manifest_version": 1
+    "manifest_version": 2
   }
