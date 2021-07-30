@@ -93,6 +93,11 @@ if (!chrome.cookies) {
       return this.cookies_[domain];
     };
   }
+
+  function helperSuccessMsg() {
+    document.getElementById("success-msg").classList.remove("no-display");
+    document.getElementById("success-msg").classList.remove("do-display");
+  }
   
   
   var cache = new CookieCache();
@@ -104,6 +109,7 @@ if (!chrome.cookies) {
     cache.getDomains(filter).forEach(function(domain) {
       removeCookiesForDomain(domain);
     });
+    helperSuccessMsg();
   }
   
   function removeAll() {
@@ -127,12 +133,14 @@ if (!chrome.cookies) {
         removeCookie(cookies[i]);
       }
     });
+    helperSuccessMsg();
   }
   
   function removeCookie(cookie) {
     var url = "http" + (cookie.secure ? "s" : "") + "://" + cookie.domain +
               cookie.path;
     chrome.cookies.remove({"url": url, "name": cookie.name});
+    helperSuccessMsg();
   }
   
   function removeCookiesForDomain(domain) {
@@ -174,10 +182,12 @@ if (!chrome.cookies) {
     domains.forEach(function(domain) {
       var cookies = cache.getCookies(domain);
       var row = table.insertRow(-1);
-      row.insertCell(-1).innerText = domain;
+      var cell = row.insertCell(-1);
+      cell.innerText = domain;
+      cell.setAttribute("class", "vert-center ");
       var cell = row.insertCell(-1);
       cell.innerText = cookies.length;
-      cell.setAttribute("class", "cookie_count");
+      cell.setAttribute("class", "cookie_count vert-center hori-center");
   
       var button = document.createElement("button");
       button.innerText = "delete";

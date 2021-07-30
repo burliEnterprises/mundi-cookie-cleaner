@@ -14,6 +14,9 @@
               </header>
               <nav class="terminal-menu">
                   <ul>
+                    <li><a href="story.html" 
+                        class="menu-item" target="_blank" rel="noopener"><span>BTS</span></a>
+                    </li>
                       <li><a href="https://github.com/burlienterprises/mundi-cookie-cleaner" 
                               class="menu-item" target="_blank" rel="noopener"><span>Source</span></a>
                       </li>
@@ -33,10 +36,11 @@
               Showing <span id="filter_count"></span> of <span id="total_count"></span> cookie domains.
               <button id="remove_button" style="float: right" class="btn btn-primary">DELETE ALL!</button>
           </div>
-          <br />
+          <br /><br />
+          <div class="terminal-alert terminal-alert-primary no-display success-text" id="success-msg" >Successfully cleaned up!</div>
           <table id="cookies">
               <tr class="header">
-                  <th>Name</th>
+                  <th style="text-align: left;">Name</th>
                   <th>#Cookies</th>
                   <th>&nbsp;</th>
               </tr>
