@@ -107,6 +107,7 @@ if (!chrome.cookies) {
   }
   
   function removeAll() {
+      
     var all_cookies = [];
     cache.getDomains().forEach(function(domain) {
       cache.getCookies(domain).forEach(function(cookie) {
@@ -167,14 +168,6 @@ if (!chrome.cookies) {
     select("#filter_count").innerText = domains.length;
     select("#total_count").innerText = cache.getDomains().length;
   
-    select("#delete_all_button").innerHTML = "";
-    if (domains.length) {
-      var button = document.createElement("button");
-      button.onclick = removeAllForFilter;
-      button.innerText = "delete all " + domains.length;
-      select("#delete_all_button").appendChild(button);
-    }
-  
     resetTable();
     var table = select("#cookies");
   
@@ -188,6 +181,7 @@ if (!chrome.cookies) {
   
       var button = document.createElement("button");
       button.innerText = "delete";
+      button.setAttribute("class", "btn btn-primary btn-ghost");
       button.onclick = (function(dom){
         return function() {
           removeCookiesForDomain(dom);

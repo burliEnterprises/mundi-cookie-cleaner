@@ -1,44 +1,46 @@
-  
-<html>
-    <head>
-    <style>
-    table {
-      border-collapse:collapse;
-    }
-    
-    td {
-      border: 1px solid black;
-      padding-left: 5px;
-    }
-    
-    td.button {
-      border: none;
-    }
-    
-    td.cookie_count {
-      text-align: right;
-    }
-    
-    </style>
-    <script src="manager.js"></script>
-    </head>
-    <body>
-      <h2>Cookies! ... Nom Nom Nom...</h2>
-      <button id="remove_button">DELETE ALL!</button>
-      <div id="filter_div">
-        Filter: <input id="filter" type="text">
-        <button>x</button>
+  <html>
+
+  <head>
+      <link rel="stylesheet" href="terminal.min.css" />
+      <link rel="stylesheet" href="style.css" />
+      <script src="manager.js"></script>
+  </head>
+
+  <body class="terminal">
+      <div class="container">
+          <div class="terminal-nav" style="margin-bottom: 20px;">
+              <header class="terminal-logo">
+                  <div class="logo terminal-prompt"><a href="#" class="">Mundi Cookie Cleaner </a></div>
+              </header>
+              <nav class="terminal-menu">
+                  <ul>
+                      <li><a href="https://github.com/burlienterprises/mundi-cookie-cleaner" 
+                              class="menu-item" target="_blank" rel="noopener"><span>Source</span></a>
+                      </li>
+                  </ul>
+              </nav>
+          </div>
+          
+          <p>'Mundi' manages and cleans cookies for you.<br>May he serve you well (or suffer the consequences). 
+          </p>
+
+          <div id="filter_div" style="display: flex;">
+              <input id="filter" type="text" style="flex:1" placeholder="Filter ...">
+              <button class="btn btn-default btn-ghost">x</button>
+          </div>
+          <br />
+          <div id="summary_div">
+              Showing <span id="filter_count"></span> of <span id="total_count"></span> cookie domains.
+              <button id="remove_button" style="float: right" class="btn btn-primary">DELETE ALL!</button>
+          </div>
+          <br />
+          <table id="cookies">
+              <tr class="header">
+                  <th>Name</th>
+                  <th>#Cookies</th>
+                  <th>&nbsp;</th>
+              </tr>
       </div>
-      <br />
-      <div id="summary_div">
-        Showing <span id="filter_count"></span> of <span id="total_count"></span> cookie domains.
-        <span id="delete_all_button"></span>
-      </div>
-      <br />
-      <table id="cookies">
-        <tr class="header">
-          <th>Name</th>
-          <th>#Cookies</th>
-        </tr>
-      </body>
-    </html>
+  </body>
+
+  </html>
