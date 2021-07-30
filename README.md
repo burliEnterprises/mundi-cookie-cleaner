@@ -23,7 +23,6 @@ He will forever be in our hearts.
 
 ## Moving forward:
 
-- Release in chrome store
 - Logo
 - Impl a dialog
 - Blogging
